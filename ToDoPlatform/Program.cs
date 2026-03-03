@@ -1,6 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+using ToDoPlatform.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+string conexao = builder.Configuration
+    .GetConnectionString("Conexao");
+builder.Services.AddDbContext<AppDbContext>(
+    options => options.UseMySQL(conexao)
+);
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
