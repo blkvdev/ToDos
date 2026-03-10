@@ -9,7 +9,7 @@ public class ToDo
 {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public int id { get; set; }
+    public int Id { get; set; }
 
     [Required]
     public string UserID { get; set; }
