@@ -2,6 +2,8 @@ using Microsoft.EntityFrameworkCore;
 using ToDoPlatform.Data;
 using ToDoPlatform.Models;
 using Microsoft.AspNetCore.Identity;
+using ToDoPlatform.Services;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +24,8 @@ builder.Services.AddIdentity<AppUser, IdentityRole>(
 )
 .AddEntityFrameworkStores<AppDbContext>()
 .AddDefaultTokenProviders();
+
+builder.Services.AddTransient<IUserService, UserService>();
 
 builder.Services.AddControllersWithViews();
 

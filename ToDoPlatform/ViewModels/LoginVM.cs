@@ -14,7 +14,7 @@ public class LoginVM
    [Required(ErrorMessage = "A senha é obrigatória!")]
     public string Password { get; set; }
     [Display(Name = "Manter conectado?")]
-    public bool remerberMe { get; set; }
+    public bool RememberMe { get; set; }
     [HiddenInput]
     public string ReturnUrl { get; set; }
 }
